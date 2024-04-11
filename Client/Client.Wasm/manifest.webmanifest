@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "Client",
+  "display": "standalone",
+  "name": "Client",
+  "short_name": "Client",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
