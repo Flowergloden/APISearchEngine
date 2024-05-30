@@ -18,8 +18,6 @@
     "Microsoft.VisualStudio.ComponentGroup.Azure.Prerequisites",
     "Microsoft.VisualStudio.Workload.Azure",
     "Microsoft.VisualStudio.ComponentGroup.WebToolsExtensions.TemplateEngine",
-    "Microsoft.VisualStudio.Component.Windows10SDK.19041",
-    "Microsoft.VisualStudio.ComponentGroup.MSIX.Packaging",
     "Microsoft.VisualStudio.Component.ManagedDesktop.Prerequisites",
     "Microsoft.VisualStudio.Component.Debugger.JustInTime",
     "Microsoft.VisualStudio.Workload.ManagedDesktop",
