@@ -10,5 +10,5 @@ cc = "*"
 
 [dependencies]
 derive_builder = "0.20.0"
-rocket = "0.5.1"
+rocket = { version = "0.5.1", features = ["json"] }
 xml = "0.8.20"

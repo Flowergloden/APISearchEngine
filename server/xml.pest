@@ -1,0 +1,19 @@
+Doc = !{ Head ~ Start ~ Item* ~ End }
+
+Item      = _{ FileItem | ClassItem }
+FileItem  =  { "<compound kind=\"file\">" ~ FileAttr* ~ "</compound>" }
+ClassItem =  { "<class kind=\"class\">" ~ Ident ~ "</class>" }
+
+FileAttr = _{ NameField | FilenameField | NamespaceField }
+
+NameField      = { "<name>" ~ Ident? ~ "</name>" }
+FilenameField  = { "<filename>" ~ Ident? ~ "</filename>" }
+NamespaceField = { "<namespace>" ~ Ident? ~ "</namespace>" }
+
+Ident = @{ (ASCII_ALPHA | "_") ~ (ASCII_ALPHANUMERIC | "/" | "::")* }
+
+Head  = _{ "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>" }
+Start = _{ "<tagfile>" }
+End   = _{ "</tagfile>" }
+
+WHITESPACE = _{ NEWLINE | " " }
