@@ -248,7 +248,7 @@ impl TagContent {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Tag {
     File {
         name: String,
