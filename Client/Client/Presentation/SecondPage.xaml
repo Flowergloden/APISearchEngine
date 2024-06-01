@@ -23,14 +23,6 @@
         </AppBarButton>
       </utu:NavigationBar.MainCommand>
     </utu:NavigationBar>
-    <!-- <StackPanel Grid.Row="1" -->
-    <!--       HorizontalAlignment="Center" -->
-    <!--       VerticalAlignment="Center"> -->
-    <!--   <TextBlock Text="{Binding Entity.Result[0].Kind}" -->
-    <!--     HorizontalAlignment="Center" -->
-    <!--     VerticalAlignment="Center" -->
-    <!--     Margin="8" /> -->
-    <!-- </StackPanel> -->
     <ListView Grid.Row="1"
               HorizontalAlignment="Center"
               VerticalAlignment="Center"

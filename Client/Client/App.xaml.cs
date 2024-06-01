@@ -12,10 +12,10 @@ public partial class App : Application
     {
         this.InitializeComponent();
     }
-
+    
     protected Window? MainWindow { get; private set; }
     protected IHost? Host { get; private set; }
-
+    
     protected async override void OnLaunched(LaunchActivatedEventArgs args)
     {
         var builder = this.CreateBuilder(args)
@@ -32,10 +32,10 @@ public partial class App : Application
                     logBuilder
                         .SetMinimumLevel(
                             context.HostingEnvironment.IsDevelopment() ? LogLevel.Information : LogLevel.Warning)
-
+                        
                         // Default filters for core Uno Platform namespaces
                         .CoreLogLevel(LogLevel.Warning);
-
+                    
                     // Uno Platform namespace filter groups
                     // Uncomment individual methods to see more detailed logging
                     //// Generic Xaml events
@@ -78,15 +78,15 @@ public partial class App : Application
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
             );
         MainWindow = builder.Window;
-
+        
 #if DEBUG
         MainWindow.EnableHotReload();
 #endif
         MainWindow.SetWindowIcon();
-
+        
         Host = await builder.NavigateAsync<Shell>();
     }
-
+    
     private static void RegisterRoutes(IViewRegistry views, IRouteRegistry routes)
     {
         views.Register(
@@ -94,7 +94,7 @@ public partial class App : Application
             new ViewMap<MainPage, MainModel>(),
             new DataViewMap<SecondPage, SecondModel, Entity>()
         );
-
+        
         routes.Register(
             new RouteMap("", View: views.FindByViewModel<ShellModel>(),
                 Nested:
@@ -105,4 +105,11 @@ public partial class App : Application
             )
         );
     }
+    
+    private const string Uri = "http://localhost:8000";
+    
+    public static HttpClient HttpClient = new HttpClient()
+    {
+        BaseAddress = new(Uri),
+    };
 }
