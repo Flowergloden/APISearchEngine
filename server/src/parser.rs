@@ -229,7 +229,7 @@ impl TagParser {
                 return pair.as_str().to_string();
             }
         }
-        return String::new();
+        String::new()
     }
 }
 
@@ -283,7 +283,7 @@ impl TagContent {
                     false
                 }
             })
-            .map(|x| x.clone())
+            .cloned()
             .collect()
     }
 
@@ -297,7 +297,7 @@ impl TagContent {
                     false
                 }
             })
-            .map(|x| x.clone())
+            .cloned()
             .collect()
     }
 }
