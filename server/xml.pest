@@ -1,16 +1,29 @@
-Doc = !{ Head ~ Start ~ Item* ~ End }
+Doc = !{ SOI ~ Head ~ Start ~ Item* ~ End ~ EOI }
 
-Item      = _{ FileItem | ClassItem }
-FileItem  =  { "<compound kind=\"file\">" ~ FileAttr* ~ "</compound>" }
-ClassItem =  { "<class kind=\"class\">" ~ Ident ~ "</class>" }
+Item          = _{ FileItem | ClassItem | NamespaceItem }
+FileItem      =  { "<compound kind=\"file\">" ~ FileAttr* ~ "</compound>" }
+ClassItem     =  { "<compound kind=\"class\">" ~ ClassAttr* ~ "</compound>" }
+NamespaceItem =  { "<compound kind=\"namespace\">" ~ NamespaceAttr* ~ "</compound>" }
 
-FileAttr = _{ NameField | FilenameField | NamespaceField }
+FileAttr      = _{ NameField | FilenameField | NamespaceField }
+NamespaceAttr = _{ NameField | FilenameField | ClassField | FunctionField | VariableField | NamespaceField }
+FunctionAttr  = _{ TypeField | NameField | AnchorfileField | AnchorField | ArglistField }
+VarAttr       = _{ TypeField | NameField | AnchorfileField | AnchorField | ArglistField }
+ClassAttr     = _{ NameField | FilenameField | FunctionField | VariableField | ClassField }
 
-NameField      = { "<name>" ~ Ident? ~ "</name>" }
-FilenameField  = { "<filename>" ~ Ident? ~ "</filename>" }
-NamespaceField = { "<namespace>" ~ Ident? ~ "</namespace>" }
+FunctionField = { "<member kind=\"function\">" ~ FunctionAttr* ~ "</member>" }
+VariableField = { "<member kind=\"variable\">" ~ VarAttr* ~ "</member>" }
 
-Ident = @{ (ASCII_ALPHA | "_") ~ (ASCII_ALPHANUMERIC | "/" | "::")* }
+NameField       = { "<name>" ~ Ident? ~ "</name>" }
+FilenameField   = { "<filename>" ~ Ident? ~ "</filename>" }
+NamespaceField  = { "<namespace>" ~ Ident? ~ "</namespace>" }
+ClassField      = { "<class kind=\"class\">" ~ Ident ~ "</class>" }
+TypeField       = { "<type>" ~ Ident ~ "</type>" }
+AnchorfileField = { "<anchorfile>" ~ Ident? ~ "</anchorfile>" }
+AnchorField     = { "<anchor>" ~ Ident? ~ "</anchor>" }
+ArglistField    = { "<arglist>" ~ Ident? ~ "</arglist>" }
+
+Ident = @{ (ASCII_ALPHA | "_" | "(" | ")" | "~") ~ (ASCII_ALPHANUMERIC | "." | " " | "/" | "::" | "_" | "(" | ")" | "&" | ";" | "~" | "+" | "-" | "*" | "/" | "=" | "[]" | "^" | "|" | "!" | "%")* ~ ")"? }
 
 Head  = _{ "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>" }
 Start = _{ "<tagfile>" }

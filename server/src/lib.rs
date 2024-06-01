@@ -1,3 +1,3 @@
 pub mod cors;
-pub mod data;
+pub mod parser;
 pub mod response;

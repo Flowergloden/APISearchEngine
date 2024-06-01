@@ -10,5 +10,7 @@ cc = "*"
 
 [dependencies]
 derive_builder = "0.20.0"
+pest = "2.7.10"
+pest_derive = "2.7.10"
 rocket = { version = "0.5.1", features = ["json"] }
-xml = "0.8.20"
+thiserror = "1.0.61"

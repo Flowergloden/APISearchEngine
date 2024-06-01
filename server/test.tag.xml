@@ -5,4 +5,26 @@
     <filename>cpp/header/algorithm</filename>
     <namespace>std</namespace>
   </compound>
+  <compound kind="namespace">
+    <name>std</name>
+    <class kind="class">std::alignment_of</class>
+  </compound>
+  <compound kind="class">
+    <name>std::alignment_of</name>
+    <filename>cpp/types/alignment_of</filename>
+    <member kind="function">
+      <type>T</type>
+      <name>address</name>
+      <anchorfile>cpp/memory/allocator/address</anchorfile>
+      <anchor></anchor>
+      <arglist>(T... args)</arglist>
+    </member>
+    <member kind="variable">
+      <type>T</type>
+      <name>container</name>
+      <anchorfile>cpp/iterator/back_insert_iterator</anchorfile>
+      <anchor></anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
 </tagfile>
