@@ -33,10 +33,28 @@ impl Item {
 impl From<Tag> for Item {
     fn from(value: Tag) -> Self {
         match value {
-            Tag::File { name, filename, .. } => Self { kind: ItemKind::File, path: name, source: get_ref_link(&filename) },
-            Tag::Namespace { name, filename, .. } => Self { kind: ItemKind::Namespace, path: name, source: get_ref_link(&filename) },
-            Tag::Class { name, filename, .. } => Self { kind: ItemKind::Class, path: name, source: get_ref_link(&filename) },
-            Tag::Function { name, af, of_class, of_namespace,  .. } => {
+            Tag::File { name, filename, .. } => Self {
+                kind: ItemKind::File,
+                path: name,
+                source: get_ref_link(&filename),
+            },
+            Tag::Namespace { name, filename, .. } => Self {
+                kind: ItemKind::Namespace,
+                path: name,
+                source: get_ref_link(&filename),
+            },
+            Tag::Class { name, filename, .. } => Self {
+                kind: ItemKind::Class,
+                path: name,
+                source: get_ref_link(&filename),
+            },
+            Tag::Function {
+                name,
+                af,
+                of_class,
+                of_namespace,
+                ..
+            } => {
                 let path = if of_class.is_some() {
                     format!("{}::{}", of_class.unwrap(), name)
                 } else {
@@ -47,8 +65,14 @@ impl From<Tag> for Item {
                     path,
                     source: get_ref_link(&af),
                 }
-            },
-            Tag::Variable { name, af, of_class, of_namespace,  .. } => {
+            }
+            Tag::Variable {
+                name,
+                af,
+                of_class,
+                of_namespace,
+                ..
+            } => {
                 let path = if of_class.is_some() {
                     format!("{}::{}", of_class.unwrap(), name)
                 } else {
@@ -59,7 +83,7 @@ impl From<Tag> for Item {
                     path,
                     source: get_ref_link(&af),
                 }
-            },
+            }
         }
     }
 }

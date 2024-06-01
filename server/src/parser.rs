@@ -243,6 +243,66 @@ pub struct TagContent {
 }
 
 impl TagContent {
+    pub fn search_in_name(&self, keyword: &str) -> Vec<Tag> {
+        let mut ret = vec![];
+        for i in self.files.iter() {
+            if i.name().contains(keyword) {
+                ret.push(i.clone())
+            }
+        }
+        for i in self.namespaces.iter() {
+            if i.name().contains(keyword) {
+                ret.push(i.clone())
+            }
+        }
+        for i in self.class.iter() {
+            if i.name().contains(keyword) {
+                ret.push(i.clone())
+            }
+        }
+        for i in self.functions.iter() {
+            if i.name().contains(keyword) {
+                ret.push(i.clone())
+            }
+        }
+        for i in self.variables.iter() {
+            if i.name().contains(keyword) {
+                ret.push(i.clone())
+            }
+        }
+        ret
+    }
+
+    pub fn search_in_para(&self, para: &str) -> Vec<Tag> {
+        self.functions
+            .iter()
+            .filter(|x| {
+                if let Tag::Function { args, .. } = x {
+                    args.contains(para)
+                } else {
+                    false
+                }
+            })
+            .map(|x| x.clone())
+            .collect()
+    }
+
+    pub fn search_in_rt(&self, rt: &str) -> Vec<Tag> {
+        self.functions
+            .iter()
+            .filter(|x| {
+                if let Tag::Function { ty, .. } = x {
+                    ty.contains(rt)
+                } else {
+                    false
+                }
+            })
+            .map(|x| x.clone())
+            .collect()
+    }
+}
+
+impl TagContent {
     pub fn new() -> Self {
         Self::default()
     }
