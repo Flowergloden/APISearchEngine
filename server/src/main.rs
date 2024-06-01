@@ -1,24 +1,29 @@
-use std::{fs::File, io::BufReader};
-use rocket::{get, launch, routes, serde::json::Json};
+use rocket::{get, launch, routes, serde::json::Json, State};
 use server::{
     cors::CORS,
-    data::TagData,
+    parser::{TagContent, TagParser},
     response::{Body, Item},
 };
-use xml::reader::{EventReader, XmlEvent};
 
 #[get("/search/<mode>/<keyword>")]
-fn search(mode: &str, keyword: &str) -> Json<Body> {
-    let items = vec![Item::mock("asdf"), Item::mock("hjkl")];
+fn search(mode: &str, keyword: &str, content: &State<TagContent>) -> Json<Body> {
+    let items = match mode {
+        "name" => content.search_in_name(keyword).into_iter().map(|x| x.into()).collect(),
+        "para" => content.search_in_para(keyword).into_iter().map(|x| x.into()).collect(),
+        "rt" => content.search_in_rt(keyword).into_iter().map(|x| x.into()).collect(),
+        _ => vec![],
+    };
     let body = Body { items };
     Json(body)
 }
 
 #[launch]
 fn start() -> _ {
-    let file = File::open("test.tag.xml").unwrap();
-    let file = BufReader::new(file);
-    let parser = EventReader::new(file);
+    let input = include_str!("cppreference-doxygen-web.tag.xml");
+    let content = TagParser.parse_doc(&input).unwrap();
 
-    rocket::build().attach(CORS).mount("/", routes![search])
+    rocket::build()
+        .manage(content)
+        .attach(CORS)
+        .mount("/", routes![search])
 }
