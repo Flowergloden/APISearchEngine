@@ -31,9 +31,7 @@ public partial class App : Application
                     // Configure log levels for different categories of logging
                     logBuilder
                         .SetMinimumLevel(
-                            context.HostingEnvironment.IsDevelopment() ?
-                                LogLevel.Information :
-                                LogLevel.Warning)
+                            context.HostingEnvironment.IsDevelopment() ? LogLevel.Information : LogLevel.Warning)
 
                         // Default filters for core Uno Platform namespaces
                         .CoreLogLevel(LogLevel.Warning);
@@ -54,7 +52,6 @@ public partial class App : Application
                     //logBuilder.HotReloadCoreLogLevel(LogLevel.Information);
                     //// Debug JS interop
                     //logBuilder.WebAssemblyLogLevel(LogLevel.Debug);
-
                 }, enableUnoLogging: true)
                 .UseConfiguration(configure: configBuilder =>
                     configBuilder
@@ -102,8 +99,8 @@ public partial class App : Application
             new RouteMap("", View: views.FindByViewModel<ShellModel>(),
                 Nested:
                 [
-                    new ("Main", View: views.FindByViewModel<MainModel>()),
-                    new ("Second", View: views.FindByViewModel<SecondModel>()),
+                    new("Main", View: views.FindByViewModel<MainModel>()),
+                    new("Second", View: views.FindByViewModel<SecondModel>()),
                 ]
             )
         );

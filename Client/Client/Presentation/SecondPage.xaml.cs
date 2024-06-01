@@ -8,3 +8,6 @@ public sealed partial class SecondPage : Page
     }
 }
 
+public record Entity(IList<EntityTemplate> Result);
+
+public record EntityTemplate(string Kind, string Path, string Source);
