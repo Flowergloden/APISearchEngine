@@ -1,5 +1,3 @@
-use std::{fs::File, io::Read};
-
 use rocket::{get, launch, routes, serde::json::Json};
 use server::{
     cors::CORS,
@@ -16,12 +14,8 @@ fn search(mode: &str, keyword: &str) -> Json<Body> {
 
 #[launch]
 fn start() -> _ {
-    let mut file = File::open("cppreference-doxygen-web.tag.xml").unwrap();
-    // let mut file = File::open("test.tag.xml").unwrap();
-    let mut input = String::new();
-    file.read_to_string(&mut input).unwrap();
+    let input = include_str!("cppreference-doxygen-web.tag.xml");
     let content = TagParser.parse_doc(&input).unwrap();
-    println!("{:?}", content);
 
     rocket::build().attach(CORS).mount("/", routes![search])
 }
