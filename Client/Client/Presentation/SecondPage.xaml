@@ -23,28 +23,28 @@
         </AppBarButton>
       </utu:NavigationBar.MainCommand>
     </utu:NavigationBar>
-    <StackPanel Grid.Row="1"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center">
-      <TextBlock Text="{Binding Entity.Result[0].Kind}"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Margin="8" />
-    </StackPanel>
-    <!-- <ListView Grid.Row="1" -->
-    <!--           HorizontalAlignment="Center" -->
-    <!--           VerticalAlignment="Center" -->
-    <!--           ItemsSource="{Binding Result}"> -->
-    <!--   <ListView.ItemTemplate> -->
-    <!--     <DataTemplate x:Key="ResultListTemplate" x:DataType="local:Entity"> -->
-    <!--       <StackPanel Orientation="Vertical" -->
-    <!--                   HorizontalAlignment="Center" -->
-    <!--                   VerticalAlignment="Center"> -->
-    <!--         <Button Content="{x:Bind Kind}" /> -->
-    <!--         <TextBlock Text="{x:Bind Path}" /> -->
-    <!--       </StackPanel> -->
-    <!--     </DataTemplate> -->
-    <!--   </ListView.ItemTemplate> -->
-    <!-- </ListView> -->
+    <!-- <StackPanel Grid.Row="1" -->
+    <!--       HorizontalAlignment="Center" -->
+    <!--       VerticalAlignment="Center"> -->
+    <!--   <TextBlock Text="{Binding Entity.Result[0].Kind}" -->
+    <!--     HorizontalAlignment="Center" -->
+    <!--     VerticalAlignment="Center" -->
+    <!--     Margin="8" /> -->
+    <!-- </StackPanel> -->
+    <ListView Grid.Row="1"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding Entity.Result}">
+      <ListView.ItemTemplate>
+        <DataTemplate x:Key="ResultListTemplate" x:DataType="local:EntityTemplate">
+          <StackPanel Orientation="Vertical"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+            <Button Content="{x:Bind Kind}" />
+            <TextBlock Text="{x:Bind Path}" />
+          </StackPanel>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
   </Grid>
 </Page>
