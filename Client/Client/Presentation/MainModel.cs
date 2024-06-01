@@ -35,7 +35,6 @@ public partial record MainModel
         // if (context == "") return ans;
         
         var uri = Dir + '/' + mode! + '/' + context!;
-        Console.WriteLine(uri);
         var msg = await App.HttpClient.GetAsync(uri);
         var res = await JsonDocument.ParseAsync(await msg.Content.ReadAsStreamAsync());
         var root = res.RootElement;
@@ -45,6 +44,13 @@ public partial record MainModel
             var kind = item.GetProperty("kind").GetString();
             var path = item.GetProperty("path").GetString();
             var source = item.GetProperty("source").GetString();
+            
+            void SourceAction()
+            {
+                Console.WriteLine(source!);
+                System.Diagnostics.Process.Start(source!);
+            }
+            
             ans = ans.Add(new(kind!, path!, source!));
         }
         
@@ -54,7 +60,6 @@ public partial record MainModel
     public async Task GoToSecond()
     {
         var name = await SearchContext;
-        Console.WriteLine(name);
         var result = await GetResult();
         await _navigator.NavigateViewModelAsync<SecondModel>(this, data: new Entity(result));
     }

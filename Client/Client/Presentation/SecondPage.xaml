@@ -32,8 +32,9 @@
           <StackPanel Orientation="Vertical"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center">
-            <Button Content="{x:Bind Kind}" />
+            <TextBlock Text="{x:Bind Kind}" />
             <TextBlock Text="{x:Bind Path}" />
+            <HyperlinkButton Content="Go to" NavigateUri="{x:Bind Source}" />
           </StackPanel>
         </DataTemplate>
       </ListView.ItemTemplate>
