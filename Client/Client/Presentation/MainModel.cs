@@ -16,12 +16,17 @@ public partial record MainModel
     
     public IState<string> SearchContext => State<string>.Value(this, () => string.Empty);
     
+    public IListFeed<EntityTemplate> Result => ListFeed<EntityTemplate>.Async(async ct => await GetResult());
+    
+    private async Task<IImmutableList<EntityTemplate>> GetResult()
+    {
+        return ImmutableList.Create<EntityTemplate>().Add(new("TestKind", "TestPath", "TestSource"));
+    }
+    
     public async Task GoToSecond()
     {
         var name = await SearchContext;
-        await _navigator.NavigateViewModelAsync<SecondModel>(this, data: new Entity(new List<EntityTemplate>()
-        {
-            new(name!, name!, name!)
-        }));
+        var result = await Result;
+        await _navigator.NavigateViewModelAsync<SecondModel>(this, data: new Entity(result));
     }
 }
