@@ -26,8 +26,12 @@
       <SplitButton>
         <TextBlock Text="{Binding SearchMode}" />
         <SplitButton.Flyout>
-          <Flyout>
-            <ListView ItemsSource="{Binding Modes}" SelectedItem="{Binding SearchMode, Mode=TwoWay}"></ListView>
+          <Flyout x:Name="Flyout" ShowMode="Auto">
+            <ListView ItemsSource="{Binding Modes}"
+                      SelectedItem="{Binding SearchMode, Mode=TwoWay}"
+                      SelectionChanged="Selector_OnSelectionChanged">
+              <TextBlock Text="{Binding}" />
+            </ListView>
           </Flyout>
         </SplitButton.Flyout>
       </SplitButton>

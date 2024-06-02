@@ -6,4 +6,9 @@ public sealed partial class MainPage : Page
     {
         this.InitializeComponent();
     }
+    
+    private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        Flyout.Hide();
+    }
 }
