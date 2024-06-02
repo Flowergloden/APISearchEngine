@@ -23,10 +23,10 @@
       <TextBox Text="{Binding SearchContext, Mode=TwoWay}"
                PlaceholderText="Getting started" />
       <!-- <ComboBox SelectionChanged="{Binding UpdateMode}" ItemsSource="{Binding Modes}" /> -->
-      <SplitButton>
-        <TextBlock Text="{Binding SearchMode}" />
+      <SplitButton x:Name="SplitButton">
+        <Button Content="{Binding SearchMode}" Click="ButtonBase_OnClick"/>
         <SplitButton.Flyout>
-          <Flyout x:Name="Flyout" ShowMode="Auto">
+          <Flyout x:Name="Flyout">
             <ListView ItemsSource="{Binding Modes}"
                       SelectedItem="{Binding SearchMode, Mode=TwoWay}"
                       SelectionChanged="Selector_OnSelectionChanged">
