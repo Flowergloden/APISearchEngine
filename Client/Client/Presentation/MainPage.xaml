@@ -21,16 +21,26 @@
                 VerticalAlignment="Center"
                 Spacing="16">
       <TextBox Text="{Binding SearchContext, Mode=TwoWay}"
-               PlaceholderText="Getting started" />
-      <!-- <ComboBox SelectionChanged="{Binding UpdateMode}" ItemsSource="{Binding Modes}" /> -->
-      <SplitButton x:Name="SplitButton">
-        <Button Content="{Binding SearchMode}" Click="ButtonBase_OnClick"/>
+               PlaceholderText="Keyword"
+               MinWidth="720"
+               FontSize="24"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"/>
+      <SplitButton HorizontalAlignment="Left"
+                   MinHeight="48">
+        <TextBlock Text="{Binding SearchMode}"
+                MinWidth="144"
+                FontSize="18"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"/>
         <SplitButton.Flyout>
           <Flyout x:Name="Flyout">
             <ListView ItemsSource="{Binding Modes}"
                       SelectedItem="{Binding SearchMode, Mode=TwoWay}"
                       SelectionChanged="Selector_OnSelectionChanged">
-              <TextBlock Text="{Binding}" />
+              <TextBlock Text="{Binding}"
+                         MinWidth="36"
+                         FontSize="18"/>
             </ListView>
           </Flyout>
         </SplitButton.Flyout>

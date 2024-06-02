@@ -2,6 +2,19 @@ using System.Text.Json;
 
 namespace Client.Presentation;
 
+public static class ExtendString
+{
+    public static string HtmlUnEscape(this string value)
+    {
+        return value.Replace("&lt;", "<").Replace("&gt;", ">");
+    }
+    
+    public static string HtmlEscape(this string value)
+    {
+        return value.Replace("<", "&lt;").Replace(">", "&gt;");
+    }
+}
+
 public partial record MainModel
 {
     private INavigator _navigator;
@@ -18,11 +31,11 @@ public partial record MainModel
     
     private const string Dir = "search";
     
-    public IState<string> SearchMode => State<string>.Value(this, () => "ByName");
+    public IState<string> SearchMode => State<string>.Value(this, () => "in name");
     
     public IState<string> SearchContext => State<string>.Value(this, () => string.Empty);
     
-    public string[] Modes = ["ByName", "ByParameterType", "ByReturnType"];
+    public string[] Modes = ["in name", "in parameter", "in return type"];
     
     private const string ItemPropertyName = "items";
     
@@ -32,24 +45,24 @@ public partial record MainModel
         
         var mode = await SearchMode switch
         {
-            "ByName" => "name",
-            "ByParameterType" => "para",
-            "ByReturnType" => "rt",
+            "in name" => "name",
+            "in parameter" => "para",
+            "in return type" => "rt",
             _ => "name",
         };
         var context = await SearchContext;
         if (context == "") return ans;
         
-        var uri = Dir + '/' + mode! + '/' + context!;
+        var uri = Dir + '/' + mode! + '/' + context!.HtmlEscape();
         var msg = await App.HttpClient.GetAsync(uri);
         var res = await JsonDocument.ParseAsync(await msg.Content.ReadAsStreamAsync());
         var root = res.RootElement;
         var items = root.GetProperty(ItemPropertyName);
         foreach (var item in items.EnumerateArray())
         {
-            var kind = item.GetProperty("kind").GetString();
-            var path = item.GetProperty("path").GetString();
-            var source = item.GetProperty("source").GetString();
+            var kind = item.GetProperty("kind").GetString()?.HtmlUnEscape();
+            var path = item.GetProperty("path").GetString()?.HtmlUnEscape();
+            var source = item.GetProperty("source").GetString()?.HtmlUnEscape();
             
             ans = ans.Add(new(kind!, path!, source!));
         }

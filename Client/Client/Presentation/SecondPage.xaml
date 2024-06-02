@@ -26,16 +26,19 @@
     <ListView Grid.Row="1"
               HorizontalAlignment="Center"
               VerticalAlignment="Center"
-              ItemsSource="{Binding Entity.Result}">
+              ItemsSource="{Binding Entity.Result}"
+              Margin="16">
       <ListView.ItemTemplate>
         <DataTemplate x:Key="ResultListTemplate" x:DataType="local:EntityTemplate">
-          <StackPanel Orientation="Vertical"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center">
-            <TextBlock Text="{x:Bind Kind}" />
-            <TextBlock Text="{x:Bind Path}" />
-            <HyperlinkButton Content="Go to" NavigateUri="{x:Bind Source}" />
-          </StackPanel>
+          <HyperlinkButton NavigateUri="{x:Bind Source}"
+                           MinWidth="1080">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        MinWidth="1080">
+              <TextBlock Text="{x:Bind Kind}" HorizontalAlignment="Left" MinWidth="270"/>
+              <TextBlock Text="{x:Bind Path}" HorizontalAlignment="Left" />
+            </StackPanel>
+          </HyperlinkButton>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

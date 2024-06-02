@@ -11,9 +11,4 @@ public sealed partial class MainPage : Page
     {
         Flyout.Hide();
     }
-    
-    private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-    {
-        Flyout.ShowAt(SplitButton);
-    }
 }
