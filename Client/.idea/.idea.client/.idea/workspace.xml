@@ -9,10 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bcaa6df5-58f7-4b20-b6a5-17959f39302f" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Presentation/MainModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Presentation/MainModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Presentation/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Presentation/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Presentation/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Presentation/MainPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Presentation/SecondPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Presentation/SecondPage.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +28,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b769054dbabf4d58b8698ddc32e1862d6c4100/a3/742d53cb/FrameworkTemplate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b769054dbabf4d58b8698ddc32e1862d6c4100/b9/ca5b765e/UIElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2470d3555f2616b80fd07aaacdb6ee9fa14d478d64fddab8feb2b5eb1dbfad/ViewMap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/13270/RiderProjects/APISearchEngine/Client/Client/Presentation/MainModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/13270/RiderProjects/APISearchEngine/Client/Client/Presentation/SecondPage.xaml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -104,7 +102,8 @@
       <workItem from="1717309501830" duration="827000" />
       <workItem from="1717310345956" duration="972000" />
       <workItem from="1717312566400" duration="2434000" />
-      <workItem from="1717315058080" duration="3351000" />
+      <workItem from="1717315058080" duration="4280000" />
+      <workItem from="1717319448459" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: Update framework">
       <option name="closed" value="true" />
@@ -186,7 +185,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717310710056</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refactor: layouts">
+      <option name="closed" value="true" />
+      <created>1717318606746</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717318606746</updated>
+    </task>
+    <task id="LOCAL-00012" summary="chore: clean up">
+      <option name="closed" value="true" />
+      <created>1717319239781</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717319239781</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +232,8 @@
     <MESSAGE value="feat: impl searching mode switch" />
     <MESSAGE value="feat: button flyout auto hide" />
     <MESSAGE value="feat: show button flyout when clicking whole button" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: show button flyout when clicking whole button" />
+    <MESSAGE value="refactor: layouts" />
+    <MESSAGE value="chore: clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: clean up" />
   </component>
 </project>
