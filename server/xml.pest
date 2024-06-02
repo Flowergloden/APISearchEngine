@@ -23,7 +23,7 @@ AnchorfileField = { "<anchorfile>" ~ Ident? ~ "</anchorfile>" }
 AnchorField     = { "<anchor>" ~ Ident? ~ "</anchor>" }
 ArglistField    = { "<arglist>" ~ Ident? ~ "</arglist>" }
 
-Ident = @{ (ASCII_ALPHA | "_" | "(" | ")" | "~") ~ (ASCII_ALPHANUMERIC | "." | " " | "/" | "::" | "_" | "(" | ")" | "&" | ";" | "~" | "+" | "-" | "*" | "/" | "=" | "[]" | "^" | "|" | "!" | "%")* ~ ")"? }
+Ident = @{ (ASCII_ALPHA | "_" | "(" | ")" | "~") ~ (ASCII_ALPHANUMERIC | "." | " " | "/" | "::" | "_" | "(" | ")" | "&" | ";" | "~" | "+" | "-" | "*" | "/" | "=" | "[]" | "^" | "|" | "!" | "%" | ",")* ~ ")"? }
 
 Head  = _{ "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>" }
 Start = _{ "<tagfile>" }

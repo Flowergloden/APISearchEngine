@@ -2042,11 +2042,11 @@
     </member>
     <class kind="class">std::false_type</class>
     <member kind="function">
-      <type>T</type>
+      <type>int</type>
       <name>fclose</name>
       <anchorfile>cpp/io/c/fclose</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(FILE*)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -2148,11 +2148,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>int</type>
       <name>fflush</name>
       <anchorfile>cpp/io/c/fflush</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(FILE*)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -2298,11 +2298,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>FILE*</type>
       <name>fopen</name>
       <anchorfile>cpp/io/c/fopen</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(const char*, const char*)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -2427,11 +2427,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>int</type>
       <name>freopen</name>
       <anchorfile>cpp/io/c/freopen</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(const char*, const char*, FILE*)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -2457,11 +2457,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>int</type>
       <name>fscanf</name>
       <anchorfile>cpp/io/c/fscanf</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(FILE*, const char*, ...)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -4921,11 +4921,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>int</type>
       <name>printf</name>
       <anchorfile>cpp/io/c/fprintf</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(const char*, ...)</arglist>
     </member>
     <class kind="class">std::priority_queue</class>
     <class kind="class">std::promise</class>
@@ -5188,11 +5188,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
-      <name>remove (&lt;cstdio&gt;)</name>
+      <type>int</type>
+      <name>remove</name>
       <anchorfile>cpp/io/c/remove</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(const char*)</arglist>
     </member>
     <class kind="class">std::remove_all_extents</class>
     <class kind="class">std::remove_all_extents_t</class>
@@ -5239,11 +5239,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>int</type>
       <name>rename</name>
       <anchorfile>cpp/io/c/rename</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(const char*, const char*)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -5425,11 +5425,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>int</type>
       <name>scanf</name>
       <anchorfile>cpp/io/c/fscanf</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(const char*, ...)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -5513,11 +5513,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>void</type>
       <name>setbuf</name>
       <anchorfile>cpp/io/c/setbuf</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(FILE*, char*)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -5548,11 +5548,11 @@
       <arglist>(T... args)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>int</type>
       <name>setvbuf</name>
       <anchorfile>cpp/io/c/setvbuf</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(FILE*, char*, int, size_t)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -5657,11 +5657,11 @@
     <class kind="class">std::slice_array</class>
     <class kind="class">std::smatch</class>
     <member kind="function">
-      <type>T</type>
+      <type>int</type>
       <name>snprintf</name>
       <anchorfile>cpp/io/c/fprintf</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(FILE*, const char*, ...)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
@@ -6193,18 +6193,18 @@
     </member>
     <class kind="class">std::tm</class>
     <member kind="function">
-      <type>T</type>
+      <type>FILE*</type>
       <name>tmpfile</name>
       <anchorfile>cpp/io/c/tmpfile</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(void)</arglist>
     </member>
     <member kind="function">
-      <type>T</type>
+      <type>char*</type>
       <name>tmpnam</name>
       <anchorfile>cpp/io/c/tmpnam</anchorfile>
       <anchor></anchor>
-      <arglist>(T... args)</arglist>
+      <arglist>(char*)</arglist>
     </member>
     <member kind="function">
       <type>T</type>
