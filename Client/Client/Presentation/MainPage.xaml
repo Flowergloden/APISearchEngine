@@ -22,6 +22,15 @@
                 Spacing="16">
       <TextBox Text="{Binding SearchContext, Mode=TwoWay}"
                PlaceholderText="Getting started" />
+      <!-- <ComboBox SelectionChanged="{Binding UpdateMode}" ItemsSource="{Binding Modes}" /> -->
+      <SplitButton>
+        <TextBlock Text="{Binding SearchMode}" />
+        <SplitButton.Flyout>
+          <Flyout>
+            <ListView ItemsSource="{Binding Modes}" SelectedItem="{Binding SearchMode, Mode=TwoWay}"></ListView>
+          </Flyout>
+        </SplitButton.Flyout>
+      </SplitButton>
       <Button Content="Search"
               AutomationProperties.AutomationId="SecondPageButton"
               Command="{Binding GoToSecond}" />

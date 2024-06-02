@@ -18,21 +18,27 @@ public partial record MainModel
     
     private const string Dir = "search";
     
-    public IState<string> SearchMode => State<string>.Value(this, () => "name");
+    public IState<string> SearchMode => State<string>.Value(this, () => "ByName");
     
     public IState<string> SearchContext => State<string>.Value(this, () => string.Empty);
     
-    private const string ItemPropertyName = "items";
+    public string[] Modes = ["ByName", "ByParameterType", "ByReturnType"];
     
-    // public IListState<EntityTemplate> Result => ListState<EntityTemplate>.Async(this, async _ => await GetResult());
+    private const string ItemPropertyName = "items";
     
     private async ValueTask<IImmutableList<EntityTemplate>> GetResult()
     {
         var ans = ImmutableList.Create<EntityTemplate>();
         
-        var mode = await SearchMode;
+        var mode = await SearchMode switch
+        {
+            "ByName" => "name",
+            "ByParameterType" => "para",
+            "ByReturnType" => "rt",
+            _ => "name",
+        };
         var context = await SearchContext;
-        // if (context == "") return ans;
+        if (context == "") return ans;
         
         var uri = Dir + '/' + mode! + '/' + context!;
         var msg = await App.HttpClient.GetAsync(uri);
@@ -44,12 +50,6 @@ public partial record MainModel
             var kind = item.GetProperty("kind").GetString();
             var path = item.GetProperty("path").GetString();
             var source = item.GetProperty("source").GetString();
-            
-            void SourceAction()
-            {
-                Console.WriteLine(source!);
-                System.Diagnostics.Process.Start(source!);
-            }
             
             ans = ans.Add(new(kind!, path!, source!));
         }
