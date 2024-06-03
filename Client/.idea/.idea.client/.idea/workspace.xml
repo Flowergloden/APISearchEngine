@@ -8,15 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcaa6df5-58f7-4b20-b6a5-17959f39302f" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/Models/Result.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Models/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Models/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Presentation/MainModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Presentation/MainModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Presentation/MainPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Presentation/MainPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Presentation/SecondModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Presentation/SecondModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Presentation/SecondPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Presentation/SecondPage.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Presentation/SecondPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Presentation/SecondPage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +19,22 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Collections.Immutable/src/System/Collections/Immutable/ImmutableList_1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/087e15321bb712ef6fe8b0ba6f8bd12facf92629/src/libraries/System.Net.Http/src/System/Net/Http/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17648aa821dd402f89fc95c616f886d21a6908/6d/6fdfde1b/HttpRequestHeaders.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5147b10c5a8c4522b56fba0a889139cfc8f908/39/a866595e/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b769054dbabf4d58b8698ddc32e1862d6c4100/1d/5c4df1c6/SplitButtonClickEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b769054dbabf4d58b8698ddc32e1862d6c4100/a3/742d53cb/FrameworkTemplate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b769054dbabf4d58b8698ddc32e1862d6c4100/b9/ca5b765e/UIElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2470d3555f2616b80fd07aaacdb6ee9fa14d478d64fddab8feb2b5eb1dbfad/ViewMap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/13270/RiderProjects/APISearchEngine/Client/Client/Presentation/MainModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/13270/RiderProjects/APISearchEngine/Client/Client/Presentation/SecondPage.xaml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -50,7 +53,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;http.proxy&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -94,7 +97,13 @@
       <workItem from="1717052881920" duration="1123000" />
       <workItem from="1717221237770" duration="5524000" />
       <workItem from="1717227000203" duration="2935000" />
-      <workItem from="1717229959940" duration="1426000" />
+      <workItem from="1717229959940" duration="21143000" />
+      <workItem from="1717304685789" duration="4281000" />
+      <workItem from="1717309501830" duration="827000" />
+      <workItem from="1717310345956" duration="972000" />
+      <workItem from="1717312566400" duration="2434000" />
+      <workItem from="1717315058080" duration="4280000" />
+      <workItem from="1717319448459" duration="365000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: Update framework">
       <option name="closed" value="true" />
@@ -104,7 +113,95 @@
       <option name="project" value="LOCAL" />
       <updated>1717044135985</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: impl search result data template">
+      <option name="closed" value="true" />
+      <created>1717233807895</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717233807895</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: use data template">
+      <option name="closed" value="true" />
+      <created>1717233906855</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717233906855</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: impl async result getter">
+      <option name="closed" value="true" />
+      <created>1717236309229</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717236309229</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: get searching result">
+      <option name="closed" value="true" />
+      <created>1717246236139</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717246236139</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: open detail method">
+      <option name="closed" value="true" />
+      <created>1717251803083</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717251803083</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: update server address">
+      <option name="closed" value="true" />
+      <created>1717307830717</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717307830717</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: impl searching mode switch">
+      <option name="closed" value="true" />
+      <created>1717309356041</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717309356041</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: button flyout auto hide">
+      <option name="closed" value="true" />
+      <created>1717310053042</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717310053042</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: show button flyout when clicking whole button">
+      <option name="closed" value="true" />
+      <created>1717310710056</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717310710056</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor: layouts">
+      <option name="closed" value="true" />
+      <created>1717318606746</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717318606746</updated>
+    </task>
+    <task id="LOCAL-00012" summary="chore: clean up">
+      <option name="closed" value="true" />
+      <created>1717319239781</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717319239781</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +223,17 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="refactor: Update framework" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Update framework" />
+    <MESSAGE value="feat: impl search result data template" />
+    <MESSAGE value="feat: use data template" />
+    <MESSAGE value="feat: impl async result getter" />
+    <MESSAGE value="feat: get searching result" />
+    <MESSAGE value="feat: open detail method" />
+    <MESSAGE value="feat: update server address" />
+    <MESSAGE value="feat: impl searching mode switch" />
+    <MESSAGE value="feat: button flyout auto hide" />
+    <MESSAGE value="feat: show button flyout when clicking whole button" />
+    <MESSAGE value="refactor: layouts" />
+    <MESSAGE value="chore: clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: clean up" />
   </component>
 </project>

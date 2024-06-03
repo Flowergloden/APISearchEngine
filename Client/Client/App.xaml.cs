@@ -106,7 +106,7 @@ public partial class App : Application
         );
     }
     
-    private const string Uri = "http://localhost:8000";
+    private const string Uri = "http://search.flowergolden.me";
     
     public static HttpClient HttpClient = new HttpClient()
     {
